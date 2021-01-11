@@ -5,7 +5,7 @@ package com.eomcs.lang.ex03;
 
 public class Exam0410 {
   public static void main(String[] args) {
-    // 자바는 문자를 메모리에 저장할 때 Unicode 규칙에 따라
+    // 자바는 문자를 메모리에 저장할 때 Unicode(UCS2) 규칙에 따라
     // 2바이트 코드로 저장한다.
     // => 'A' : 0x0041
     // => 'B' : 0x0042
