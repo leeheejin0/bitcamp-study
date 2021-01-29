@@ -17,7 +17,7 @@ public class Exam0460 {
     list.add(true);
     list.add(365);
 
-    for (int i = 0; i < list.size(); i++)
+    for (int i = 0; i < list.size(); i++) //length 아니고 size 쓰네
       System.out.println(list.get(i));
   }
 }
