@@ -1,11 +1,28 @@
 // 추상 클래스와 추상 메서드의 활용: 적용 전
 package com.eomcs.oop.ex07.b;
 
-public class Exam01 {
+import java.util.Arrays;
 
+public class Exam01 {
+  static int[] createRandomNumbers(final int size) {
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++) {
+      arr[i] = i;
+    }
+    int count = size >> 1;
+    for (int i = 0; i < (size >> 1); i++) {
+      int index1 = (int)(Math.random() * size);
+      int index2 = (int)(Math.random() * size);
+      int temp = arr[index1];
+      arr[index1] = arr[index2];
+      arr[index2] = temp;
+    }
+    return arr;
+  }
   public static void main(String[] args) {
-    int[] values = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5};
-    int[] values2 = {23, 7, 12, 15, 9, 2, 22, 8, 11, 25, 13, 5};
+
+    int[] values = createRandomNumbers(100000);
+    int[] values2 = Arrays.copyOf(values, values.length);
 
     BubbleSort s1 = new BubbleSort();
     QuickSort s2 = new QuickSort();
@@ -24,23 +41,36 @@ public class Exam01 {
   // 정렬을 수행하는 객체와 값을 주면
   // 그 값을 정렬한 후 출력하는 메서드이다.
   static void display(BubbleSort sorter, int[] values) {
-
+    System.out.println("[정렬 전]");
+    printNumbers(values);
+    long start = System.currentTimeMillis();
     // BubbleSort 사용법에 맞춰 정렬을 수행한다.
     sorter.run(values);
-
+    long end = System.currentTimeMillis();
+    System.out.printf("걸린 시간: %d/n", end - start);
+    System.out.println("[정렬 후 ---------------------]");
     // 정렬된 값을 출력한다.
-    for (int  value : values) {
-      System.out.print(value + ",");
-    }
-    System.out.println();
+    printNumbers(values);
   }
 
   static void display(QuickSort sorter, int[] values) {
-
-    // QuickSort 사용법에 맞춰 정렬을 수행한다.
+    System.out.println("[정렬 전]");
+    printNumbers(values);
+    long start = System.currentTimeMillis();
+    // BubbleSort 사용법에 맞춰 정렬을 수행한다.
     sorter.start(values, 0, values.length - 1);
+    long end = System.currentTimeMillis();
+    System.out.printf("걸린 시간: %d/n", end - start);
+    System.out.println("[정렬 후 ---------------------]");
+    // QuickSort 사용법에 맞춰 정렬을 수행한다.
+
 
     // 정렬된 값을 출력한다.
+    printNumbers(values);
+
+  }
+
+  static void printNumbers(int[] values) {
     for (int  value : values) {
       System.out.print(value + ",");
     }
