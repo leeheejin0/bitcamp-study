@@ -44,7 +44,7 @@ public class Exam0710_08 {
     }
   }
 
-  static void printIndent(int level) { //들여쓰기
+  static void printIndent(int level) {
     for (int i = 0; i < level; i++) {
       System.out.print("  ");
     }
