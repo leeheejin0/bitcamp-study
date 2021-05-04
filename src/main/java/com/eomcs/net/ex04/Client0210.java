@@ -76,9 +76,6 @@ public class Client0210 {
 
         System.out.println("서버와 연결 끊음!");
 
-        if (name.equals("stop"))
-          break; 
-
       } catch (Exception e) {
         e.printStackTrace();
       }

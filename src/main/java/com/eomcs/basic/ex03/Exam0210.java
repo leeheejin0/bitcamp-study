@@ -1,4 +1,4 @@
-// 목록 조회: 반복문과 인덱스를 이용한 목록 조회
+// java.util.LinkedList 사용법
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
@@ -57,9 +57,19 @@ public class Exam0210 {
     list.add(m1);
     list.add(m2);
     list.add(m3);
+    System.out.println(list);
 
-    for (int i = 0; i < list.size(); i++) {
-      System.out.println(list.get(i));
-    }
+    // indexOf(값)
+    // - 목록에 같은 값을 가진 객체의 인덱스를 알아낸다.
+    // - 값을 비교할 때는 contains()와 마찬가지로
+    //   equals()의 리턴 값이 true인 경우 같은 값으로 간주한다.
+    //
+    Member m4 = new Member("임꺽정", 30);
+    System.out.println(list.indexOf(m4)); // true
+
+    System.out.println(m2 == m4);
+    System.out.println(m2.equals(m4));
+    System.out.println(m2.hashCode() == m4.hashCode());
+
   }
 }

@@ -27,8 +27,6 @@ public class Exam0110 {
     long endTime = System.currentTimeMillis();
 
     out.close();
-    // DataOutputStrean 객체를 close()하면
-    // 이 
 
     System.out.println("데이터 출력 완료!");
     System.out.println(endTime - startTime);

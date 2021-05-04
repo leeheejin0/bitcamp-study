@@ -19,7 +19,7 @@ public class Exam0220 {
         System.out.printf("%s 스레드 실행 중...\n",
             Thread.currentThread().getName());
 
-        Thread.sleep(millisec);
+        //Thread.sleep(millisec);
 
         System.out.printf("%s 스레드 종료!\n",
             Thread.currentThread().getName());
@@ -37,7 +37,7 @@ public class Exam0220 {
     // 놀고 있는 스레드가 없으면 새 스레드를 생성한다.
     //
     executorService.execute(new MyRunnable(6000));
-    executorService.execute(new MyRunnable(3000));
+    executorService.execute(new MyRunnable(1000));
     executorService.execute(new MyRunnable(9000));
     executorService.execute(new MyRunnable(2000));
 

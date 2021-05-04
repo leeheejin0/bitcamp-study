@@ -8,13 +8,14 @@ import java.util.Base64.Encoder;
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
-    String str = "ABC012가각간";
+    String str = "AB";
 
     byte[] bytes = str.getBytes("UTF-8");
     for (byte b : bytes) {
       System.out.printf("%x ", b);
     }
     System.out.println();
+    System.out.println("-----------------------------");
 
     // Base64 인코딩
     // => 바이너리 데이터를 문자화시킨다.
@@ -34,12 +35,9 @@ public class Exam0110 {
     //    QUJDMDEy6rCA6rCB6rCE
     Encoder encoder = Base64.getEncoder();
     byte[] base64Bytes = encoder.encode(bytes);
-    for (byte b : base64Bytes) {
-      System.out.printf("%x ", b);
-    }
-    System.out.println();
-
     System.out.println(new String(base64Bytes));
+
+    System.out.println("-----------------------------");
 
     // Base64 디코딩
     // => Base64 코드를 원래의 바이너리 값으로 변환한다.

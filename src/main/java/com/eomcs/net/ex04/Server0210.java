@@ -13,8 +13,7 @@ public class Server0210 {
 
       System.out.println("서버 실행!");
 
-
-      loop: while (true) {
+      while (true) {
         // 한 번 클라이언트와 연결되면
         // 요청을 받아서 처리한 후 응답하고
         // 바로 연결을 끊는다.
@@ -25,15 +24,9 @@ public class Server0210 {
           System.out.println("클라이언트가 연결되었음!");
 
           String name = in.readLine();
+          out.printf("%s 님 반갑습니다!\n", name);
+          out.flush();
 
-          if (name.equals("stop")) {
-            out.println("Goodbye!");
-            out.flush();
-            break loop;
-          } else {
-            out.printf("%s 님 반갑습니다!\n", name);
-            out.flush();
-          }
         } catch (Exception e) {
           System.out.println("클라이언트와 통신 중 오류 발생!");
         }

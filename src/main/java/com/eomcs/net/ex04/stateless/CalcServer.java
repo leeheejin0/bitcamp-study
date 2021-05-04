@@ -48,9 +48,6 @@ public class CalcServer {
         case "/":
           result = a / b;
           break;
-        default:
-          out.println("해당 연산을 지원하지 않습니다.");
-          return;
       }
       out.printf("%d %s %d = %d\n", a, op, b, result);
     }

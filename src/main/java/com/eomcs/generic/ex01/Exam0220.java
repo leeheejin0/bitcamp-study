@@ -25,13 +25,11 @@ public class Exam0220 {
     ObjectBox b1 = new ObjectBox(); // <= Integer.valueOf(100)
     ObjectBox b2 = new ObjectBox();
     ObjectBox b3 = new ObjectBox();
-    ObjectBox b4 = new ObjectBox();
 
     // ObjectBox에 값 넣기
     b1.set(new Member("홍길동", 20));
     b2.set("Hello");
-    b3.set(new Date());
-    b4.set(100);
+    b3.set(100);
 
     // 이렇게 ObjectBox에 다양한 타입의 값을 넣을 수 있는 이유?
     // => set()의 파라미터 타입은 Object 이기 때문이다.
@@ -42,17 +40,14 @@ public class Exam0220 {
     // ObjectBox 객체에서 값 꺼내기
     // => 값을 꺼낼 때마다 형변환 해야 한다.
     //
-    Member v1 = (Member) b1.get();
+    int v1 = (int) b1.get(); // <= 리턴값.intValue()
     System.out.println(v1);
 
-    int v2 = (int) b2.get(); // autu-unboxing ==> ((Integer<= 리턴값.intValue()
+    String v2 = (String) b2.get();
     System.out.println(v2);
 
-    String v3 = (String) b3.get();
+    Date v3 = (Date)b3.get();
     System.out.println(v3);
-
-    Date v4 = (Date)b4.get();
-    System.out.println(v4);
 
     // ObjectBox 의 이점
     // - 이전 방식에 비해 객체의 타입 별로 Box 클래스를 구분해서 쓰지 않으니 코딩이 편하다.

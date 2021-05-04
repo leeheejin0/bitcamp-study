@@ -18,9 +18,6 @@ public class Exam0210 {
 
   // 2) non-static nested class = inner class
   // => 바깥 클래스의 인스턴스에 종속되는 클래스.
-  //    즉 중첩 클래스에서 바깥 클래스의 인스턴스 멤버를 사용한다는 뜻이다. 
-  //    바깥 크래스의 인스턴스 없이 작업할 수 없는 경우
-  //    중첩 클래스를 non-static nested class로 정의한다. 
   // => 바깥 클래스의 인스턴스 없이 생성할 수 없다. 
   class B {}
 

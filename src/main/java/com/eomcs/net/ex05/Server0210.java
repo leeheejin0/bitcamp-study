@@ -36,7 +36,7 @@ public class Server0210 {
     System.out.println("데이터를 읽기 전에 잠깐 멈춤>");
     keyScan.nextLine();
 
-    // 빈 패킷을 사용하여 클라이언트가 보낸 데이터를 받는다.
+    // 빈 패킷을 사용하여 들어온 데이터를 받는다.
     // => 데이터를 받을 때까지 리턴하지 않는다.
     socket.receive(emptyPacket);
     System.out.println("데이터를 받았음!");
@@ -44,7 +44,7 @@ public class Server0210 {
     socket.close();
     keyScan.close();
 
-    // 빈 패킷에 저장된 클라이언트가 보낸 데이터를 꺼낸다.
+    // 빈 패킷에 저장된 수신 데이터를 꺼낸다.
     // 패킷에 저장된 UTF-8로 인코딩된 바이트 배열을 가지고 String 객체(UTF-16)를 만든다.
     String message = new String(//
         emptyPacket.getData(), // 패킷에서 바이트 배열을 꺼낸다.

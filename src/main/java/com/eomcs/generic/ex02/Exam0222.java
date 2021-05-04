@@ -1,4 +1,4 @@
-// 제네릭(Generic) 문법 정리 - 제네릭 파라미터 wildcard(?)
+// 제네릭(Generic) 문법 정리 - 제네릭 파라미터 
 package com.eomcs.generic.ex02;
 
 import java.util.ArrayList;
@@ -36,15 +36,16 @@ public class Exam0222 {
     my1.add(new B1());
 
     m1(my1); // OK
+    m1(new ArrayList<A>());  // OK
+    m1(new ArrayList<B1>()); // OK
+    m1(new ArrayList<B2>()); // OK
+    m1(new ArrayList<C>()); // OK
   }
 
   static void m1(ArrayList<?> list) {
     // 컴파일러는 파라미터로 받은 ArrayList가 어떤 타입의 값을 다루는 지 알 수 없기 때문에 
     // 그 타입인지 검사해야 하는 메서드를 사용할 때는 컴파일을 명확하게 해줄 수 없다.
     // 따라서 컴파일 오류를 발생시킨다.
-    // 제네릭에 대한 타입 검사가 필요한 메서드를 호출할때는
-    // 타입이 지정되어 있지 않기 때문에 유효한 문법인지 알 수 없어서
-    // 컴파일 할 수 없다. 
     /*
     list.add(new Object());
     list.add(new A());
@@ -65,6 +66,7 @@ public class Exam0222 {
     System.out.println(list.get(1));
     System.out.println(list.get(2));
     System.out.println(list.get(3));
+    System.out.println(list.get(4));
   }
 }
 

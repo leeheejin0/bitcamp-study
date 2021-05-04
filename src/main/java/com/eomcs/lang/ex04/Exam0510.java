@@ -13,7 +13,6 @@ package com.eomcs.lang.ex04;
 //        데이터타입 변수명[] = new 데이터타입[개수];
 //        ex) int arr[] = new int[5];
 //
-// 
 public class Exam0510 {
   public static void main(String[] args) {
     // 배열 사용 전

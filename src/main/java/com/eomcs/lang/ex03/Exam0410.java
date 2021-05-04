@@ -5,7 +5,7 @@ package com.eomcs.lang.ex03;
 
 public class Exam0410 {
   public static void main(String[] args) {
-    // 자바는 문자를 메모리에 저장할 때 Unicode(UCS2) 규칙에 따라
+    // 자바는 문자를 메모리에 저장할 때 Unicode 규칙에 따라
     // 2바이트 코드로 저장한다.
     // => 'A' : 0x0041
     // => 'B' : 0x0042
@@ -34,9 +34,9 @@ public class Exam0410 {
     // \ 바로 뒤에 8진수로 적을 수 있다.
     // 단, 0 ~ 377 범위의 8진수만 가능하다.
     System.out.println('\101'); // A
-    System.out.println('\122'); // z
+    System.out.println('\122'); // R
     System.out.println('\377'); // ÿ
-    //System.out.println('\477'); // 컴파일 오류!
+    //    System.out.println('\477'); // 컴파일 오류!
 
     // 유니코드 값을 직접 적는 경우는
     // 보통 키보드로 문자를 직접 입력할 수 없을 때이다.

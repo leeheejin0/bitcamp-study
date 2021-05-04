@@ -4,6 +4,7 @@ package com.eomcs.lang.ex05;
 //
 public class Exam0120 {
   public static void main(String[] args) {
+
     // *, /, % 는 +, - 보다 먼저 계산된다.
     System.out.println(2 + 3 * 7); // 3 * 7을 먼저 수행한다.
     System.out.println(3 * 7 + 2); // 3 * 7을 먼저 수행한다.

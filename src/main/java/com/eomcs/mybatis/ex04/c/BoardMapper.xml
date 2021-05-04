@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardMapper">
+  
+  <resultMap type="Board" id="BoardMap">
+    <id column="board_id" property="no"/> 
+    <result column="contents" property="content"/>
+    <result column="created_date" property="registeredDate"/>
+    <result column="view_count" property="viewCount"/>
+  </resultMap>
+  
+  <select id="select0110" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    where 
+    <if test="menuNo == 1">
+      title like concat('%', #{keyword}, '%')
+    </if>
+    <if test="menuNo == 2">
+      contents like concat('%', #{keyword}, '%')
+    </if>
+    order by board_id desc
+  </select>
+  
+   <select id="select0120" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    <where>
+     <if test="menuNo == 1">
+       title like concat('%', #{keyword}, '%')
+     </if>
+     <if test="menuNo == 2">
+      contents like concat('%', #{keyword}, '%')
+     </if>
+    </where>
+    order by board_id desc
+  </select>
+  
+    <select id="select0210" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    where 
+    <if test="title != null">
+      title like concat('%', #{title}, '%')
+    </if>
+    <if test="contents != null">
+      and contents like concat('%', #{contents}, '%')
+    </if>
+    order by board_id desc
+  </select>
+  
+   <select id="select0220" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    <where> 
+    <if test="title != null">
+      title like concat('%', #{title}, '%')
+    </if>
+    <if test="contents != null">
+      and contents like concat('%', #{contents}, '%')
+    </if>
+    </where>
+    order by board_id desc
+  </select>
+  
+   <select id="select0230" resultMap="BoardMap" parameterType="map">
+ select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    <trim prefix="where" prefixOverrides="or|and">
+    <if test="title != null">
+      title like concat('%', #{title}, '%')
+    </if>
+    <if test="contents != null">
+      and contents like concat('%', #{contents}, '%')
+    </if>
+    </trim>
+    order by board_id desc
+  </select>
+
+<select id="select0310" resultMap="BoardMap" parameterType="map">
+    select 
+      board_id,
+      title,    
+      contents,
+      created_date, 
+      view_count  
+    from x_board
+    where 
+    1!=1
+    <if test="title != null">
+     or title like concat('%', #{title}, '%')
+    </if>
+    <if test="contents != null">
+      or contents like concat('%', #{contents}, '%')
+    </if>
+    order by board_id desc
+  </select>
+  
+</mapper>
+
+
+

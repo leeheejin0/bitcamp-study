@@ -39,7 +39,7 @@ public class Exam0710 {
       if (file.isDirectory() && !file.isHidden()) {
         System.out.printf("%s/\n", file.getName());
         printList(file, level + 1);
-      } else if (file.isFile()) {
+      } else {
         System.out.print("\\-- ");
         System.out.printf("%s\n", file.getName());
       }

@@ -8,7 +8,7 @@ public class Exam0242 {
   // => enum을 사용하여 상수를 정의한다.
   // => nested enum은 기본이 static 이다.
   //    그래서 static을 생략해도 된다.
-  // ???
+  //
   enum Level {
     GUEST, MEMBER, ADMIN
   }

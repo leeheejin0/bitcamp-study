@@ -1,6 +1,13 @@
 // 오버라이딩(overriding) - 오버라이딩 실수의 예
 package com.eomcs.oop.ex06.c;
 
+class B {
+  void m(int a) {
+    System.out.println("B의 m()");
+  }
+}
+
+
 class B2 extends B {
   // 오버라이딩 문법
   // => 메서드명, 파라미터 형식, 리턴 타입이 같아야 한다.
@@ -33,11 +40,7 @@ class B3 extends B {
 }
 
 public class Exam0210 {
-  class B {
-    void m(int a) {
-      System.out.println("B의 m()");
-    }
-  }
+
   public static void main(String[] args) {
     // 1) 오버라이딩을 잘못한 예:
     test1();
